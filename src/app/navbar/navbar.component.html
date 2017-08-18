@@ -1,0 +1,13 @@
+<nav *ngIf="showNavBar" class ="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class = "navbar-header">
+      <a routerLink="/home" class="navbar-brand">AngularSPACE</a>
+    </div>
+    
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      <li><a (click)="logout()">Logout</a></li>
+    </ul>
+  </div>
+</nav>

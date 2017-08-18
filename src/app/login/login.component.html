@@ -1,0 +1,40 @@
+<div *ngIf="loading">
+  Please Wait
+</div>
+
+<div *ngIf="!loading" class="jumbotron">
+  <div class="container">
+  
+    <h2 class="text-center">Login to AngularSPACE</h2>
+    <div class="row">
+      </div>
+    <div class="row">
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-4">
+       <form #form="ngForm" (ngSubmit)="login()" *ngIf="active"> 
+        <div class="form-group" [ngClass]="{ 'has-error': email.invalid && email.touched }">
+          <input type="text" class="form-control login-input" name="username" placeholder="username" required
+          [(ngModel)]="model.email" #email="ngModel">
+          <span class="help-block" *ngIf="email.invalid && email.touched">username is required.</span>
+        </div>
+
+        <div class="form-group" [ngClass]="{ 'has-error': password.invalid && password.touched }">
+          <input type="password" class="form-control" name="password" placeholder="password" required
+          [(ngModel)]="model.password" #password="ngModel">
+          <span class="help-block" *ngIf="password.invalid && password.touched">password is required.</span>
+        </div>
+
+        <button type="submit" class="btn btn-lg btn-block btn-primary" [disabled]="form.invalid">
+          Login
+        </button>
+        <footer class="text-center">
+            <a href="#">Create Account </a> | <a href="#"> Recover Account  </a>
+        </footer>
+      </form>
+      </div>
+      <div class="col-sm-4">
+      </div>
+    </div>
+  </div>
+</div>
